@@ -1,0 +1,122 @@
+#! /bin/sh
+# Comment: modify $PATH in the end of ~/.bashrc:
+# export PATH=$PATH:$HOME/gsord
+# if the code is in ~/gsord
+echo "compile sord ..."
+gfortran -c -O3 source/CSCATANG.f90
+gfortran -c -O3 source/FORD_IP.f90
+gfortran -c -O3 source/FORDM_IP.f90
+gfortran -c -O3 source/FRESNELR0_IP.f90
+gfortran -c -O3 source/FRESNELR_IP.f90
+gfortran -c -O3 source/GAUSZW.f90
+gfortran -c -O3 source/GROUPTAU.f90
+gfortran -c -O3 source/NODES.f90
+gfortran -c -O3 source/QX.f90
+gfortran -c -O3 source/QX0.f90
+gfortran -c -O3 source/RAYLEIGH12.f90
+gfortran -c -O3 source/ROTATOR.f90
+gfortran -c -O3 source/ROTATOR2.f90
+gfortran -c -O3 source/ROUGHSRF.f90
+gfortran -c -O3 source/RPV.f90
+gfortran -c -O3 source/RTLS.f90
+gfortran -c -O3 source/RTX.f90
+gfortran -c -O3 source/SORD_IP.f90
+gfortran -c -O3 source/SORDM_IP.f90
+gfortran -c -O3 source/SPLITTAU.f90
+gfortran -c -O3 source/SSCAT1_IP.f90
+gfortran -c -O3 source/SSCAT1M_IP.f90
+gfortran -c -O3 source/SUMKA1B1.f90
+gfortran -c -O3 source/SURFACE0_IP.f90
+gfortran -c -O3 source/SURFACE0M_IP.f90
+gfortran -c -O3 source/SURFACE_IP.f90
+gfortran -c -O3 source/SURFACEM_IP.f90
+gfortran -c -O3 source/SURFBNDM_IP.f90
+gfortran -c -O3 source/SURFTOA_IP.f90
+gfortran -c -O3 source/Z0_IP.f90
+gfortran -c -O3 source/ZAERM0_IP.f90
+gfortran -c -O3 source/ZAERM_IP.f90
+gfortran -c -O3 source/ZM0_IP.f90
+gfortran -c -O3 source/ZM_IP.f90
+gfortran -c -O3 source/ZRAYM0_IP.f90
+gfortran -c -O3 source/ZRAYM_IP.f90
+gfortran source/AAA_TESTS_SORD_IP.f90 \
+CSCATANG.o \
+FORD_IP.o \
+FORDM_IP.o \
+FRESNELR0_IP.o \
+FRESNELR_IP.o \
+GAUSZW.o \
+GROUPTAU.o \
+NODES.o \
+QX.o \
+QX0.o \
+RAYLEIGH12.o \
+ROTATOR.o \
+ROTATOR2.o \
+ROUGHSRF.o \
+RPV.o \
+RTLS.o \
+RTX.o \
+SORD_IP.o \
+SORDM_IP.o \
+SPLITTAU.o \
+SSCAT1_IP.o \
+SSCAT1M_IP.o \
+SUMKA1B1.o \
+SURFACE0_IP.o \
+SURFACE0M_IP.o \
+SURFACE_IP.o \
+SURFACEM_IP.o \
+SURFBNDM_IP.o \
+SURFTOA_IP.o \
+Z0_IP.o \
+ZAERM0_IP.o \
+ZAERM_IP.o \
+ZM0_IP.o \
+ZM_IP.o \
+ZRAYM0_IP.o \
+ZRAYM_IP.o \
+-o gsord.exe
+echo "done!"
+echo "moving *.o files to obj"
+
+mv \
+CSCATANG.o \
+FORD_IP.o \
+FORDM_IP.o \
+FRESNELR0_IP.o \
+FRESNELR_IP.o \
+GAUSZW.o \
+GROUPTAU.o \
+NODES.o \
+QX.o \
+QX0.o \
+RAYLEIGH12.o \
+ROTATOR.o \
+ROTATOR2.o \
+ROUGHSRF.o \
+RPV.o \
+RTLS.o \
+RTX.o \
+SORD_IP.o \
+SORDM_IP.o \
+SPLITTAU.o \
+SSCAT1_IP.o \
+SSCAT1M_IP.o \
+SUMKA1B1.o \
+SURFACE0_IP.o \
+SURFACE0M_IP.o \
+SURFACE_IP.o \
+SURFACEM_IP.o \
+SURFBNDM_IP.o \
+SURFTOA_IP.o \
+Z0_IP.o \
+ZAERM0_IP.o \
+ZAERM_IP.o \
+ZM0_IP.o \
+ZM_IP.o \
+ZRAYM0_IP.o \
+ZRAYM_IP.o \
+obj
+echo "done!"
+echo "type gsord.exe to run"

@@ -1,0 +1,85 @@
+#! /bin/sh
+# Comment: modify $PATH in the end of ~/.bashrc:
+# export PATH=$PATH:$HOME/gsord
+# if the code is in ~/gsord
+echo "compile sord ..."
+gfortran -c -O3 src/CSCATANG.f90
+gfortran -c -O3 src/FORD_IP.f90
+gfortran -c -O3 src/FORDM_IP.f90
+gfortran -c -O3 src/FRESNELR0_IP.f90
+gfortran -c -O3 src/FRESNELR_IP.f90
+gfortran -c -O3 src/GAUSZW.f90
+gfortran -c -O3 src/GROUPTAU.f90
+gfortran -c -O3 src/NODES.f90
+gfortran -c -O3 src/QX.f90
+gfortran -c -O3 src/QX0.f90
+gfortran -c -O3 src/RAYLEIGH12.f90
+gfortran -c -O3 src/ROTATOR.f90
+gfortran -c -O3 src/ROTATOR2.f90
+gfortran -c -O3 src/ROUGHSRF.f90
+gfortran -c -O3 src/RPV.f90
+gfortran -c -O3 src/RTLS.f90
+gfortran -c -O3 src/RTX.f90
+gfortran -c -O3 src/SORD_IP.f90
+gfortran -c -O3 src/SORDM_IP.f90
+gfortran -c -O3 src/SPLITTAU.f90
+gfortran -c -O3 src/SSCAT1_IP.f90
+gfortran -c -O3 src/SSCAT1M_IP.f90
+gfortran -c -O3 src/SUMKA1B1.f90
+gfortran -c -O3 src/SURFACE0_IP.f90
+gfortran -c -O3 src/SURFACE0M_IP.f90
+gfortran -c -O3 src/SURFACE_IP.f90
+gfortran -c -O3 src/SURFACEM_IP.f90
+gfortran -c -O3 src/SURFBNDM_IP.f90
+gfortran -c -O3 src/SURFTOA_IP.f90
+gfortran -c -O3 src/Z0_IP.f90
+gfortran -c -O3 src/ZAERM0_IP.f90
+gfortran -c -O3 src/ZAERM_IP.f90
+gfortran -c -O3 src/ZM0_IP.f90
+gfortran -c -O3 src/ZM_IP.f90
+gfortran -c -O3 src/ZRAYM0_IP.f90
+gfortran -c -O3 src/ZRAYM_IP.f90
+gfortran src/AAA_TESTS_SORD_IP.f90 \
+CSCATANG.o \
+FORD_IP.o \
+FORDM_IP.o \
+FRESNELR0_IP.o \
+FRESNELR_IP.o \
+GAUSZW.o \
+GROUPTAU.o \
+NODES.o \
+QX.o \
+QX0.o \
+RAYLEIGH12.o \
+ROTATOR.o \
+ROTATOR2.o \
+ROUGHSRF.o \
+RPV.o \
+RTLS.o \
+RTX.o \
+SORD_IP.o \
+SORDM_IP.o \
+SPLITTAU.o \
+SSCAT1_IP.o \
+SSCAT1M_IP.o \
+SUMKA1B1.o \
+SURFACE0_IP.o \
+SURFACE0M_IP.o \
+SURFACE_IP.o \
+SURFACEM_IP.o \
+SURFBNDM_IP.o \
+SURFTOA_IP.o \
+Z0_IP.o \
+ZAERM0_IP.o \
+ZAERM_IP.o \
+ZM0_IP.o \
+ZM_IP.o \
+ZRAYM0_IP.o \
+ZRAYM_IP.o \
+-o gsord.exe
+echo "done!"
+echo "moving *.o files to obj"
+
+mv *.o obj
+echo "done!"
+echo "type gsord.exe to run"
